@@ -6,10 +6,10 @@ dotenv.config();
 const io = require("socket.io")(process.env.PORT || 5000, {
     //handline cors error
     cors: {
-      origin: process.env.URL,
-      methods: ["GET", "POST"],
-      credentials: true
-    }
+      origin: process.env.URL || "*",
+      methods: ["GET", "POST"]
+    },
+    allowEIO3: true,
   });
   
 const users ={};
